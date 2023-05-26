@@ -28,7 +28,7 @@ defmodule Notifiex.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:httpoison, "~> 1.8"},
+      {:httpoison, "~> 2.1"},
       {:poison, "~> 5.0"}
     ]
   end
