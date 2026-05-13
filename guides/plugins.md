@@ -1,4 +1,4 @@
-<h1>Plugins</h1>
+# Plugins
 
 - [Creating a plugin](#creating-a-plugin)
 - [Using plugins](#using-plugins)

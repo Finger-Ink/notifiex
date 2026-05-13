@@ -1,4 +1,4 @@
-<h1>Discord</h1>
+# Discord
 
 - [Retrieving Webhook URI](#retrieving-webhook-uri)
 - [Using Notifiex](#using-notifiex)

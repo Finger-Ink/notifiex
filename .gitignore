@@ -24,3 +24,8 @@ notifiex-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Locally fetched Hex docs/packages (used by hex-docs-search skill).
+/.hex-docs/
+/.hex-packages/
+/.usage-rules/

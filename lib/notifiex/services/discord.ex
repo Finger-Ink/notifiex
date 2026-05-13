@@ -25,27 +25,15 @@ defmodule Notifiex.Service.Discord do
   defp send_discord(_payload, nil), do: {:error, {:missing_options, nil}}
 
   defp send_discord(payload, url) do
-    json_payload = Poison.encode!(payload)
+    case Req.post(url, json: payload, decode_body: false) do
+      {:ok, %Req.Response{status: 204, body: body}} ->
+        {:ok, body}
 
-    header = [
-      {"Accept", "application/json"},
-      {"Content-Type", "application/json; charset=utf-8"}
-    ]
+      {:ok, %Req.Response{body: body}} ->
+        {:error, {:error_response, body}}
 
-    HTTPoison.start()
-
-    case HTTPoison.post(url, json_payload, header) do
-      {:ok, %HTTPoison.Response{body: response, status_code: 204}} ->
-        {:ok, response}
-
-      {:ok, %HTTPoison.Response{body: response}} ->
-        {:error, {:error_response, response}}
-
-      {:error, %HTTPoison.Error{reason: reason}} ->
-        {:error, {:error, reason}}
-
-      _ = e ->
-        {:error, {:unknown_response, e}}
+      {:error, exception} ->
+        {:error, {:error, Exception.message(exception)}}
     end
   end
 end

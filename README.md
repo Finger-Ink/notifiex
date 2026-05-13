@@ -14,7 +14,7 @@
 - ⚡ Incredibly lightweight (_minimal dependencies_)
 - 🤹 Asynchronous notification dispatching (using Tasks and Supervisor)
 
-<h4>Table of Contents:</h4>
+#### Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -32,10 +32,12 @@ by adding `notifiex` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:notifiex, "~> 1.2.0"}
+    {:notifiex, "~> 2.0"}
   ]
 end
 ```
+
+> Upgrading from 1.x? See the [upgrade guide](guides/upgrading_to_v2.md).
 
 ## Usage
 

@@ -1,4 +1,4 @@
-<h1>Slack</h1>
+# Slack
 
 - [Retrieving tokens](#retrieving-tokens)
 - [Using Notifiex](#using-notifiex)

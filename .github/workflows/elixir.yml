@@ -11,20 +11,17 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install Erlang/OTP + Elixir
       id: setup-beam
       uses: erlef/setup-beam@v1
       with:
-        otp-version: '24.0' # version range or exact (required)
-        elixir-version: '1.12.0' # version range or exact (required)
-        # install-hex: true (default)
-        # install-rebar: true (default)
-      # outputs: ${steps.setup-beam.outputs.(opt, elixir, rebar3)-version} (exact version installed)
+        otp-version: '26.2'
+        elixir-version: '1.17.3'
 
     - name: Restore dependency/build cache
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: |
           deps
